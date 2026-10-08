@@ -1,116 +1,100 @@
 // ============================================
-// PRODUTOS DO BANCO - PÁGINA DE PRODUTOS
+// PRODUTOS - LUNARY
 // ============================================
 
-async function carregarProdutosDoBanco() {
+const produtos = [
+    {
+        nome: "Cesta Boho",
+        descricao: "Cesta artesanal inspirada no estilo boho.",
+        preco: 79.90,
+        imagem: "../img/cesta.jpg"
+    },
+
+    {
+        nome: "Kit Cozy",
+        descricao: "Kit artesanal com estilo cozy e aconchegante.",
+        preco: 69.90,
+        imagem: "../img/kitcozy.jpg"
+    },
+
+    {
+        nome: "Vela Aromática",
+        descricao: "Vela artesanal aromática para deixar o ambiente mais aconchegante.",
+        preco: 76.90,
+        imagem: "../img/velaaromatica.jpg"
+    }
+];
+
+
+// ============================================
+// CARREGAR PRODUTOS
+// ============================================
+
+function carregarProdutos() {
 
     const container = document.getElementById("listaProdutos");
 
     if (!container) return;
 
-    try {
+    container.innerHTML = "";
 
-        const resposta = await fetch("../php/listar_produtos.php");
+    produtos.forEach(function(produto) {
 
-        const resultado = await resposta.json();
+        const card = document.createElement("div");
 
-        if (!resultado.sucesso) {
+        card.className = "produto-card";
 
-            console.log("Não foi possível carregar produtos do banco.");
+        card.innerHTML = `
 
-            return;
-        }
+            <img
+                src="${produto.imagem}"
+                alt="${produto.nome}"
+                onerror="this.src='../img/logo.png'"
+            >
 
-        const produtosBanco = resultado.produtos || [];
+            <h3>
+                ${produto.nome}
+            </h3>
 
-        // Se não tiver produtos cadastrados pelo Admin,
-        // mantém os produtos que já estavam na página.
-        if (produtosBanco.length === 0) {
-            return;
-        }
+            <div class="avaliacao">
 
-
-        produtosBanco.forEach(function(produto) {
-
-            const imagem = produto.imagem
-                ? produto.imagem
-                : "../img/logo.png";
-
-
-            const card = document.createElement("div");
-
-            card.className = "produto-card";
-
-            card.setAttribute(
-                "data-produto-banco",
-                produto.id
-            );
-
-
-            card.innerHTML = `
-
-                <img
-                    src="${imagem}"
-                    alt="${produto.nome}"
-                    onerror="this.src='../img/logo.png'"
-                >
-
-                <h3>
-                    ${produto.nome}
-                </h3>
-
-                <div class="avaliacao">
-
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-
-                    <span>
-                        Confira as avaliações
-                    </span>
-
-                </div>
-
-                <p>
-                    ${produto.descricao || "Produto artesanal da Lunary."}
-                </p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
 
                 <span>
-                    R$ ${Number(produto.preco)
-                        .toFixed(2)
-                        .replace(".", ",")}
+                    Confira as avaliações
                 </span>
 
-                <button
-                    onclick="adicionarCarrinho(
-                        '${produto.nome.replace(/'/g, "\\'")}',
-                        ${Number(produto.preco)},
-                        '${imagem}'
-                    )">
+            </div>
 
-                    Adicionar ao Carrinho
+            <p>
+                ${produto.descricao}
+            </p>
 
-                </button>
+            <span>
+                R$ ${produto.preco
+                    .toFixed(2)
+                    .replace(".", ",")}
+            </span>
 
-            `;
+            <button
+                onclick="adicionarCarrinho(
+                    '${produto.nome.replace(/'/g, "\\'")}',
+                    ${produto.preco},
+                    '${produto.imagem}'
+                )"
+            >
+                Adicionar ao Carrinho
+            </button>
 
+        `;
 
-            container.appendChild(card);
+        container.appendChild(card);
 
-        });
-
-
-    } catch (erro) {
-
-        console.error(
-            "Erro ao carregar produtos do banco:",
-            erro
-        );
-
-    }
-
+    });
 }
 
 
@@ -120,9 +104,5 @@ async function carregarProdutosDoBanco() {
 
 document.addEventListener(
     "DOMContentLoaded",
-    function() {
-
-        carregarProdutosDoBanco();
-
-    }
+    carregarProdutos
 );
