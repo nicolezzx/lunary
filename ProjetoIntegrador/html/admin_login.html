@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Administrativo | Lunary</title>
+
+    <link rel="stylesheet" href="../css/login.css">
+
+    <link rel="icon" href="../img/logo_lunary.png">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff2df;
+            font-family: Arial, sans-serif;
+        }
+
+        .admin-login {
+            width: 350px;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+            text-align: center;
+        }
+
+        .admin-login img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .admin-login h1 {
+            color: #8b1111;
+            margin-bottom: 25px;
+        }
+
+        .admin-login input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #c26e00;
+            border-radius: 8px;
+        }
+
+        .admin-login button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #8b1111;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .admin-login button:hover {
+            opacity: 0.9;
+        }
+
+        #mensagem {
+            margin-top: 15px;
+            color: #8b1111;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="admin-login">
+
+        <img src="../img/logo.png" alt="Lunary">
+
+        <h1>Portal do Admin</h1>
+
+        <form id="loginAdmin">
+
+            <input
+                type="text"
+                id="usuario"
+                placeholder="Usuário"
+                required
+            >
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Senha"
+                required
+            >
+
+            <button type="submit">
+                Entrar
+            </button>
+
+        </form>
+
+        <p id="mensagem"></p>
+
+    </div>
+
+
+    <script>
+
+        document
+            .getElementById("loginAdmin")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const usuario =
+                    document.getElementById("usuario").value;
+
+                const senha =
+                    document.getElementById("senha").value;
+
+                /*
+                 * Login somente para a versão publicada
+                 * no Vercel.
+                 */
+
+                if (
+                    usuario === "admin" &&
+                    senha === "admin123"
+                ) {
+
+                    window.location.href =
+                        "/html/admin.html";
+
+                } else {
+
+                    document.getElementById("mensagem").textContent =
+                        "Usuário ou senha incorretos.";
+
+                }
+
+            });
+
+    </script>
+
+</body>
+
+</html>
