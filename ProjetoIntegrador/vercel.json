@@ -5,20 +5,8 @@
       "destination": "/html/index.html"
     },
     {
-      "source": "/html/:path*",
+      "source": "/:path*",
       "destination": "/html/:path*"
-    },
-    {
-      "source": "/css/:path*",
-      "destination": "/css/:path*"
-    },
-    {
-      "source": "/img/:path*",
-      "destination": "/img/:path*"
-    },
-    {
-      "source": "/js/:path*",
-      "destination": "/js/:path*"
     }
   ]
 }
