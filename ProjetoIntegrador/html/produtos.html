@@ -27,70 +27,197 @@
 
 </head>
 
-
 <body>
 
 
-    <!-- ================= HEADER ================= -->
+<!-- ================= HEADER ================= -->
 
-    <header>
+<header>
 
-        <div class="header-top">
-
-            <a href="/html/index.html" class="logo">
-                <img src="../img/logo.png" alt="Lunary">
-            </a>
-
-
-            <div class="barra-pesquisa">
-
-                <input
-                    type="text"
-                    id="pesquisa"
-                    placeholder="O que você procura?"
-                    autocomplete="off"
-                >
-
-                <button type="button" id="botaoPesquisa">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-
-                <div id="resultadoPesquisa"></div>
-
-            </div>
+    <div class="logo">
+        <a href="/html/index.html">
+            <img src="../img/logo.png" alt="Lunary">
+        </a>
+    </div>
 
 
-            <div class="icones-header">
+    <div class="search-box">
 
-                <a href="/html/login.html" title="Minha conta">
-                    <i class="fa-regular fa-user"></i>
-                </a>
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="O que você procura?"
+            autocomplete="off"
+        >
 
-                <a href="#" title="Favoritos">
-                    <i class="fa-regular fa-heart"></i>
-                </a>
+        <i class="fa-solid fa-magnifying-glass"></i>
 
-                <a href="/html/carrinho.html" title="Carrinho">
-                    <i class="fa-solid fa-bag-shopping"></i>
+        <div
+            id="resultadoPesquisa"
+            class="resultado-pesquisa"
+        ></div>
 
-                    <span id="contador">0</span>
-                </a>
+    </div>
 
-            </div>
+
+    <div class="icons">
+
+        <a
+            href="/html/login.html"
+            class="usuario"
+            id="linkUsuario"
+            title="Minha conta"
+        >
+            <i class="fa-regular fa-user"></i>
+
+            <span id="nomeUsuario"></span>
+        </a>
+
+
+        <a
+            href="#"
+            title="Favoritos"
+        >
+            <i class="fa-regular fa-heart"></i>
+        </a>
+
+
+        <a
+            href="/html/carrinho.html"
+            class="icone-carrinho"
+            title="Carrinho"
+        >
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span id="contador">0</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MENU ================= -->
+
+<nav>
+
+    <a href="/html/index.html">
+        Início
+    </a>
+
+    <a href="/html/artesanato.html">
+        Artesanato
+    </a>
+
+    <a href="/html/produtos.html">
+        Produtos
+    </a>
+
+    <a href="/html/colecoes.html">
+        Coleções
+    </a>
+
+    <a href="/html/contato.html">
+        Contato
+    </a>
+
+    <a href="/html/promocoes.html">
+        Promoções
+    </a>
+
+</nav>
+
+
+<!-- ================= BANNER ================= -->
+
+<section class="banner">
+
+    <img
+        src="../img/bannerprodutos.png"
+        alt="Produtos Lunary"
+    >
+
+</section>
+
+
+<!-- ================= TÍTULO ================= -->
+
+<section class="titulo-produtos">
+
+    <h2>
+        Nossos Produtos
+    </h2>
+
+    <p>
+        Peças artesanais feitas à mão,
+        inspiradas no estilo boho, cozy e aesthetic.
+    </p>
+
+</section>
+
+
+<!-- ================= PRODUTOS ================= -->
+
+<section class="produtos">
+
+    <div
+        class="produtos-container"
+        id="listaProdutos"
+    >
+
+        <p>
+            Carregando produtos...
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOTÃO TOPO ================= -->
+
+<button
+    id="btnTopo"
+    title="Voltar ao topo"
+>
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-col">
+
+            <h3>
+                LUNARY
+            </h3>
+
+            <p>
+                Artesanato feito com carinho
+                para transformar ambientes
+                e criar momentos especiais.
+            </p>
 
         </div>
 
 
-        <!-- ================= MENU ================= -->
+        <div class="footer-col">
 
-        <nav>
+            <h3>
+                INSTITUCIONAL
+            </h3>
 
             <a href="/html/index.html">
                 Início
-            </a>
-
-            <a href="/html/artesanato.html">
-                Artesanato
             </a>
 
             <a href="/html/produtos.html">
@@ -105,285 +232,252 @@
                 Contato
             </a>
 
-            <a href="/html/promocoes.html">
-                Promoções
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- ================= BANNER ================= -->
-
-    <section class="banner-produtos">
-
-        <img
-            src="../img/bannerprodutos.png"
-            alt="Produtos Lunary"
-        >
-
-    </section>
-
-
-
-    <!-- ================= PRODUTOS ================= -->
-
-    <main>
-
-        <section class="produtos">
-
-            <h1>
-                Nossos Produtos
-            </h1>
-
-            <p class="descricao-produtos">
-                Peças artesanais feitas à mão, inspiradas no estilo boho, cozy e aesthetic.
-            </p>
-
-
-            <div
-                class="produtos-container"
-                id="listaProdutos"
-            >
-
-                <!-- Os produtos serão colocados aqui pelo JavaScript -->
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-container">
-
-
-            <div class="footer-logo">
-
-                <img
-                    src="../img/logo.png"
-                    alt="Lunary"
-                >
-
-                <p>
-                    Arte e design feitos à mão.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h3>
-                    Navegação
-                </h3>
-
-                <a href="/html/index.html">
-                    Início
-                </a>
-
-                <a href="/html/artesanato.html">
-                    Artesanato
-                </a>
-
-                <a href="/html/produtos.html">
-                    Produtos
-                </a>
-
-                <a href="/html/colecoes.html">
-                    Coleções
-                </a>
-
-                <a href="/html/contato.html">
-                    Contato
-                </a>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h3>
-                    Atendimento
-                </h3>
-
-                <a href="/html/contato.html">
-                    Fale conosco
-                </a>
-
-                <a href="/html/promocoes.html">
-                    Promoções
-                </a>
-
-                <a href="/html/login.html">
-                    Minha conta
-                </a>
-
-            </div>
-
-
         </div>
 
 
-        <div class="footer-bottom">
+        <div class="footer-col">
+
+            <h3>
+                ATENDIMENTO
+            </h3>
 
             <p>
-                © 2026 Lunary. Todos os direitos reservados.
+                Segunda a Sexta
+            </p>
+
+            <p>
+                09:00 às 18:00
+            </p>
+
+            <p>
+                (41) 99999-9999
+            </p>
+
+            <p>
+                contato@lunary.com
             </p>
 
         </div>
 
-    </footer>
+
+        <div class="footer-col">
+
+            <h3>
+                SIGA A LUNARY
+            </h3>
+
+            <div class="social">
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
+    <div class="footer-bottom">
 
-    <!-- ================= JAVASCRIPT ================= -->
+        © 2026 Lunary • Todos os direitos reservados.
 
-    <script src="../js/carrinho.js"></script>
+    </div>
 
-    <script src="../js/usuario.js"></script>
-
-    <script src="../js/pesquisa.js"></script>
-
+</footer>
 
 
-    <!-- PRODUTOS ESTÁTICOS PARA O VERCEL -->
+<!-- ================= TOAST ================= -->
 
-    <script>
+<div id="toast">
 
-        document.addEventListener("DOMContentLoaded", function () {
+    <i class="fa-solid fa-check"></i>
 
-            const lista = document.getElementById("listaProdutos");
+    Produto adicionado ao carrinho!
 
-            if (!lista) {
-                return;
-            }
+</div>
 
 
-            const produtos = [
+<!-- ================= JAVASCRIPT ================= -->
 
-                {
-                    id: 1,
-                    nome: "Cesta Boho",
-                    descricao: "Cesta artesanal inspirada no estilo boho.",
-                    preco: 79.90,
-                    imagem: "../img/cesta.jpg"
-                },
+<script src="../js/carrinho.js"></script>
 
-                {
-                    id: 2,
-                    nome: "Kit Cozy",
-                    descricao: "Kit artesanal com estilo cozy e aconchegante.",
-                    preco: 69.90,
-                    imagem: "../img/kitcozy.jpg"
-                },
+<script src="../js/usuario.js"></script>
 
-                {
-                    id: 3,
-                    nome: "Vela Aromática",
-                    descricao: "Vela artesanal aromática para deixar seu ambiente aconchegante.",
-                    preco: 76.90,
-                    imagem: "../img/velaaromatica.jpg"
-                }
-
-            ];
+<script src="../js/pesquisa.js"></script>
 
 
-            lista.innerHTML = "";
+<!-- ================= PRODUTOS ================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const container =
+        document.getElementById("listaProdutos");
+
+    if (!container) {
+        return;
+    }
 
 
-            produtos.forEach(function (produto) {
+    /*
+    ==================================================
+    PRODUTOS PARA O VERCEL
 
-                const card = document.createElement("div");
+    Não usa PHP/MySQL aqui porque o Vercel
+    não executa seu PHP do XAMPP.
+    ==================================================
+    */
 
-                card.className = "produto-card";
+    const produtos = [
 
+        {
+            nome: "Cesta Boho",
+            descricao:
+                "Cesta artesanal inspirada no estilo boho.",
+            preco: 79.90,
+            imagem: "../img/cesta.jpg"
+        },
 
-                card.innerHTML = `
+        {
+            nome: "Kit Cozy",
+            descricao:
+                "Kit artesanal com estilo cozy e aconchegante.",
+            preco: 69.90,
+            imagem: "../img/kitcozy.jpg"
+        },
 
-                    <div class="produto-imagem">
-
-                        <img
-                            src="${produto.imagem}"
-                            alt="${produto.nome}"
-                            onerror="this.src='../img/logo.png'"
-                        >
-
-                    </div>
-
-
-                    <div class="produto-info">
-
-                        <h2>
-                            ${produto.nome}
-                        </h2>
-
-                        <p>
-                            ${produto.descricao}
-                        </p>
-
-                        <strong>
-                            R$ ${produto.preco.toFixed(2).replace(".", ",")}
-                        </strong>
-
-
-                        <button
-                            type="button"
-                            class="btn-adicionar"
-                            onclick="adicionarProduto('${produto.nome}', ${produto.preco}, '${produto.imagem}')"
-                        >
-
-                            <i class="fa-solid fa-bag-shopping"></i>
-
-                            Adicionar ao Carrinho
-
-                        </button>
-
-                    </div>
-
-                `;
-
-
-                lista.appendChild(card);
-
-            });
-
-        });
-
-
-
-        // ================================
-        // ADICIONAR AO CARRINHO
-        // ================================
-
-        function adicionarProduto(nome, preco, imagem) {
-
-            if (typeof adicionarCarrinho === "function") {
-
-                adicionarCarrinho(
-                    nome,
-                    preco,
-                    imagem
-                );
-
-            } else {
-
-                console.error(
-                    "A função adicionarCarrinho não foi encontrada."
-                );
-
-            }
-
+        {
+            nome: "Vela Aromática",
+            descricao:
+                "Vela artesanal aromática para deixar seu ambiente aconchegante.",
+            preco: 76.90,
+            imagem: "../img/velaaromatica.jpg"
         }
 
-    </script>
+    ];
+
+
+    container.innerHTML = "";
+
+
+    produtos.forEach(function (produto) {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "produto-card";
+
+
+        card.innerHTML = `
+
+            <img
+                src="${produto.imagem}"
+                alt="${produto.nome}"
+                onerror="this.src='../img/logo.png'"
+            >
+
+            <h3>
+                ${produto.nome}
+            </h3>
+
+
+            <div class="avaliacao">
+
+                <i class="fa-solid fa-star"></i>
+
+                <i class="fa-solid fa-star"></i>
+
+                <i class="fa-solid fa-star"></i>
+
+                <i class="fa-solid fa-star"></i>
+
+                <i class="fa-regular fa-star"></i>
+
+                <span>
+                    Confira as avaliações
+                </span>
+
+            </div>
+
+
+            <p>
+                ${produto.descricao}
+            </p>
+
+
+            <span>
+                R$ ${produto.preco
+                    .toFixed(2)
+                    .replace(".", ",")}
+            </span>
+
+
+            <button
+                type="button"
+                onclick="adicionarProduto(
+                    '${produto.nome.replace(/'/g, "\\'")}',
+                    ${produto.preco},
+                    '${produto.imagem}'
+                )"
+            >
+
+                Adicionar ao Carrinho
+
+            </button>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+});
+
+
+/*
+==================================================
+ADICIONAR AO CARRINHO
+==================================================
+*/
+
+function adicionarProduto(nome, preco, imagem) {
+
+    if (typeof adicionarCarrinho === "function") {
+
+        adicionarCarrinho(
+            nome,
+            preco,
+            imagem
+        );
+
+    } else {
+
+        console.error(
+            "A função adicionarCarrinho não foi encontrada."
+        );
+
+    }
+
+}
+
+</script>
 
 
 </body>
